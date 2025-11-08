@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Bienvenida - Servicio al Cliente - Joia Bávaro</title>
+    <!-- Importación de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Usando Arimo (similar a Arial/Helvetica) y Lora (para títulos) -->
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Importación de Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+/* 1. CONFIGURACIÓN GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e2e8f0; /* Fondo gris claro para el área de visualización */
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 0;
+  place-items: center;
+}
+
+.slide-container {
+  align-items: center;
+  /* Color de fondo "Joia" (Crema) */
+  background-color: #f7f3e9; /* Un crema más suave y cálido */
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* Formato Horizontal (Presentación) */
+  height: 720px;
+  width: 1280px;
+  justify-content: flex-start; /* Alinea el contenido al inicio */
+  overflow: hidden;
+  padding: 60px 80px; /* Más padding horizontal */
+  position: relative;
+}
+
+.slide-container::before {
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  /* Ilustración de fondo sutil eliminada para limpieza */
+  background-image: none;
+}
+
+.slide-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. TIPOGRAFÍA "JOIA" */
+.slide-container h1,
+.slide-container h2,
+.slide-container h3 {
+  /* Color de acento "Joia" (Turquesa) */
+  color: #007780;
+  font-weight: 700;
+  font-family: 'Lora', serif; /* Fuente serif elegante para títulos */
+  margin: 0;
+}
+
+.slide-container p,
+.slide-container li,
+.slide-container .subtitle,
+.slide-container .number-label,
+.slide-container th,
+.slide-container td,
+.slide-container cite {
+  /* Color de texto principal (Gris oscuro) */
+  color: #4a4a4a; /* Un gris más suave que el negro puro */
+  font-family: 'Arimo', sans-serif; /* Fuente sans-serif limpia para cuerpo */
+}
+
+.slide-container h1 {
+  font-size: 80px; /* Más grande para el título */
+  color: #005f66; /* Un turquesa más oscuro */
+}
+
+.slide-container .slide-title {
+  font-size: 44px; /* Ligeramente más grande */
+  font-weight: 700;
+  margin-bottom: 30px; /* Espacio reducido */
+  text-align: left;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #00778033; /* Línea sutil bajo el título */
+}
+
+.slide-container h3 {
+  font-size: 28px; /* Títulos de sección más claros */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #005f66;
+}
+
+.slide-container p,
+.slide-container li,
+.slide-container .subtitle,
+.slide-container th,
+.slide-container td {
+  font-size: 18px;
+  line-height: 1.6; /* Más espaciado de línea para legibilidad */
+}
+
+.slide-container .subtitle {
+  font-weight: 400;
+  margin: 20px auto;
+  font-size: 24px;
+  line-height: 1.5;
+  font-family: 'Arimo', sans-serif;
+  color: #007780;
+}
+
+.slide-container .content-area {
+  align-items: flex-start; /* Alinea elementos al inicio */
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px; /* Espacio después del título */
+}
+
+/* 3. DEFINICIONES DE DISEÑO (LAYOUTS) */
+
+/* Layout: Title_Slide */
+.title-layout {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Layout: Two_Column (Base) */
+.two-column {
+  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Layout: Two_Column_Tiled_Text */
+.two-column.tiled {
+  align-items: stretch;
+}
+
+.two-column.tiled > div {
+  /* Color de fondo de tarjeta "Joia" (Beige) */
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #0077801a;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.two-column.tiled h3 {
+  color: #007780;
+}
+
+.two-column ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 25px;
+}
+
+.two-column li {
+  margin-bottom: 15px;
+}
+
+/* Contenedor de imagen base (ELIMINADO) */
+.image-wrapper {
+  display: none; /* Oculta todos los contenedores de imagen */
+}
+
+/* Layout: Tiled_Text_With_Icons */
+.tiled-content {
+  align-items: stretch;
+  display: flex;
+  gap: 30px; /* Espacio reducido */
+  justify-content: center;
+  width: 100%;
+}
+
+.tile {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #0077801a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  padding: 30px;
+  text-align: center;
+}
+
+.tile .icon {
+  color: #007780;
+  font-size: 40px; /* Iconos más pequeños */
+  margin-bottom: 20px;
+}
+.tile p {
+  font-size: 16px; /* Texto más pequeño en tiles */
+}
+
+/* Layout: Styled_Bullet_Points */
+.bullet-list {
+  max-width: 100%; /* Ancho completo por defecto */
+  width: 100%;
+}
+
+.bullet-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bullet-list li {
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-left: 45px; /* Más espacio para el icono */
+  position: relative;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bullet-list i {
+  color: #007780;
+  font-size: 24px;
+  left: 0;
+  margin-top: 4px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 30px; /* Ancho explícito para el icono */
+}
+
+.bullet-list li strong {
+  color: #3c4043;
+  font-weight: 700;
+}
+
+/* Colores para zafacones */
+.waste-list i.grey { color: #808080; }
+.waste-list i.green { color: #28a745; }
+.waste-list i.yellow { color: #ffc107; }
+.waste-list i.blue { color: #007bff; }
+.waste-list i.brown { color: #8b4513; }
+
+
+/* Layout: Tiled_Images (Adaptado a Iconos) */
+.image-tile {
+  flex: 1;
+  text-align: center;
+}
+
+.image-tile .image-wrapper {
+  display: none; /* Oculta contenedores de imagen */
+}
+
+.image-tile .icon {
+  color: #007780;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.image-tile p {
+  font-size: 16px;
+}
+
+/* Layout: Section_Title */
+.section-title-layout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.section-title-layout h2 {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.section-title-layout p {
+  font-size: 24px;
+  margin: 0 auto;
+  max-width: 700px;
+  color: #4a4a4a;
+}
+
+.section-title-layout hr {
+  background-color: #007780;
+  border: none;
+  height: 4px;
+  margin: 30px auto;
+  width: 100px;
+}
+
+/* Layout: Bleed_Image_Right (Adaptado a texto completo) */
+.slide-container.bleed-image-layout {
+  align-items: flex-start;
+  display: block; /* Cambiado de grid a block */
+  padding: 60px 80px; /* Restaurado padding original */
+}
+
+.slide-container.bleed-image-layout > .content-container {
+  padding: 0; /* Resetea padding */
+  height: 100%;
+}
+
+.slide-container.bleed-image-layout > .image-container {
+  display: none; /* Oculta el contenedor de imagen */
+}
+
+.slide-container.bleed-image-layout .bleed-text-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide-container.bleed-image-layout .bleed-text-side p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+}
+
+/* Layout: Q&A */
+.qa-layout {
+  text-align: center;
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.qa-layout h2 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.qa-layout p {
+  font-size: 22px;
+  color: #4a4a4a;
+}
+
+.qa-layout .contact-info {
+  color: #4a4a4a;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+/* Layout: Table */
+.table-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-layout th, .table-layout td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.table-layout th {
+  background-color: #007780; /* Color Joia */
+  color: #f7f3e9; /* Color Crema */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Arimo', sans-serif;
+}
+
+.table-layout tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.table-layout tr:nth-child(odd) {
+  background-color: #fdfcf9;
+}
+
+.table-layout tr:hover {
+  background-color: #f0f0e6;
+}
+
+/* Layout: Checklist (Operativo) */
+.checklist-layout {
+  width: 100%;
+  align-items: flex-start;
+}
+.checklist-layout .supervisor-col {
+  padding-right: 20px;
+}
+.checklist-layout .concierge-col {
+  border-left: 2px solid #007780;
+  padding-left: 30px;
+}
+
+.checklist-layout h3 {
+  color: #007780;
+  margin-bottom: 15px;
+  font-size: 24px; /* Más pequeño */
+}
+.checklist-layout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist-layout li {
+  margin-bottom: 12px;
+  padding-left: 0;
+  font-size: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+.checklist-layout li i {
+  width: 25px;
+  margin-right: 5px;
+  color: #007780;
+}
+.checklist-layout li strong {
+  display: block;
+  font-weight: 700;
+  color: #3c4043;
+  font-family: 'Arimo', sans-serif;
+}
+.checklist-layout .note {
+  font-size: 15px; 
+  font-style: italic; 
+  margin-top: 15px;
+  border-top: 1px solid #ddd; 
+  padding-top: 15px;
+}
+
+
+/* Layout: Lista de Liderazgo y Butler (CORREGIDO) */
+.leadership-list, .butler-list {
+    width: 100%;
+    max-width: 1100px;
+    font-size: 18px;
+}
+/* Estilo base para elementos de lista */
+.leadership-list div, .butler-list > div > ul > li {
+    margin-bottom: 15px;
+    padding-left: 45px !important; /* Asegura sangría */
+    position: relative;
+    line-height: 1.6;
+}
+/* Estilo para iconos */
+.leadership-list i, .butler-list > div > ul > li i {
+    color: #007780;
+    width: 30px;
+    margin-right: 10px;
+    text-align: center;
+    position: absolute !important; /* Posicionamiento absoluto */
+    top: 5px !important;
+    left: 0 !important;
+}
+
+/* Estilo específico para los títulos del Butler */
+.butler-list > div > h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex; /* Asegura alineación del icono y texto */
+    align-items: center;
+}
+.butler-list > div > h3 > i {
+    margin-right: 10px;
+    position: static !important; /* Anula posicionamiento absoluto para H3 */
+}
+/* Estilo para las listas anidadas del Butler */
+.butler-list > div > ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title_Slide -->
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>Manual de Bienvenida</h1>
+        <p class="subtitle">Servicio al Cliente<br>Joia Bávaro by Iberostar</p>
+    </div>
+</div>
+
+<!-- Slide 2: Two_Column (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">¡Bienvenido/a al Equipo!</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <p>¡Llegaste! Estamos encantados de que te unas a la familia Joia Bávaro. Queremos FELICITARTE por ser parte de este equipo.</p>
+            <p style="margin-top: 20px;">Este manual es tu guía de inducción. Contiene todo lo que necesitas saber sobre nuestra cultura, nuestros estándares de lujo y tu rol fundamental para crear una experiencia inolvidable.</p>
+            <!-- Lista con iconos -->
+            <ul style="margin-top: 30px; margin-left: 0px;">
+                <li><i class="fa-solid fa-heart"></i> Tu rol en Servicio al Cliente es el corazón de nuestro hotel.</li>
+                <li><i class="fa-solid fa-users"></i> Eres la persona que crea una familia y apoya a nuestros huéspedes en todo momento.</li>
+                <li><i class="fa-solid fa-book"></i> Esta guía es para ayudarte a comenzar y recordarte que el límite lo pones tú.</li>
+                <li><i class="fa-solid fa-rocket"></i> ¡Al infinito y más allá!</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Section_Title - Cultura Corporativa -->
+<div class="slide-container" id="slide3">
+    <div class="section-title-layout">
+        <hr>
+        <h2>¿Quiénes Somos? Cultura Corporativa</h2>
+        <p>Un modelo de turismo responsable enfocado en las personas y el medioambiente.</p>
+    </div>
+</div>
+
+<!-- Slide 4: Corp History -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Historia y Propósito del Grupo Iberostar</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Nuestra Historia</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-flag"></i> Iberostar es una **multinacional española** de propiedad familiar, fundada por la **Familia Fluxá**.</li>
+                    <li><i class="fa-solid fa-seedling"></i> Dedicada al sector turístico desde **1956**.</li>
+                    <li><i class="fa-solid fa-hotel"></i> La marca Iberostar (Hotels & Resorts) nace en **1983** con 7 hoteles en Mallorca.</li>
+                    <li><i class="fa-solid fa-plane-departure"></i> La **internacionalización al Caribe** comenzó en **1993** con el primer hotel en Punta Cana.</li>
+                    <li><i class="fa-solid fa-globe"></i> Actualmente contamos con **más de 120 hoteles** en 18 países.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Propósito de Marca</h3>
+                <p>Estamos aquí para **impulsar un cambio positivo** a través de un modelo de turismo responsable.</p>
+                <p>Nuestra **Promesa de Marca** a huéspedes y empleados es:</p>
+                <blockquote style="border-left: 5px solid #007780; padding-left: 20px; margin: 20px 0; font-style: italic; font-family: 'Lora', serif; font-size: 20px;">
+                    "Crear vacaciones felices y experiencias memorables."
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Corp Leadership (Fluxá Family) (Imágenes Eliminadas) -->
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Liderazgo Fundacional</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="image-tile">
+                <!-- Contenedor de imagen eliminado -->
+                <h3 style="font-size: 24px; margin-top: 20px;">Miquel Fluxá Rosselló</h3>
+                <p>Presidente del Grupo Iberostar</p>
+            </div>
+            <div class="image-tile">
+                <!-- Contenedor de imagen eliminado -->
+                <h3 style="font-size: 24px; margin-top: 20px;">Sabina Fluxà Thienemann</h3>
+                <p>Vicepresidenta y CEO del Grupo Iberostar</p>
+            </div>
+            <div class="image-tile">
+                <!-- Contenedor de imagen eliminado -->
+                <h3 style="font-size: 24px; margin-top: 20px;">Gloria Fluxà Thienemann</h3>
+                <p>Vice-Chairman del Grupo Iberostar</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Section_Title - Joia Essence -->
+<div class="slide-container" id="slide6">
+    <div class="section-title-layout">
+        <hr>
+        <h2>Nuestra Esencia: "La Joya de Iberostar"</h2>
+        <p>Servicio Exquisito y Personalizado</p>
+    </div>
+</div>
+
+<!-- Slide 7: Joia Personality -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Nuestra Personalidad de Marca</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-star"></i></div><h3>SENSACIONAL</h3><p>Nos gusta sorprender a nuestros huéspedes con nuestro impecable servicio.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-medal"></i></div><h3>EXPERTA</h3><p>Perfeccionamos nuestras habilidades y demostramos que nuestra dedicación está al más alto nivel.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>ÍNTIMA</h3><p>Estamos muy atentos a las necesidades, ofrecemos excelencia antes de que nos la pidan y creamos experiencias a medida.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Joia Guest Profile -->
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">¿Quién es nuestro Huésped?</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3>LOS QUE CELEBRAN</h3>
+                <p>Vienen por una ocasión especial. Buscan un trato personalizado, cenas privadas en la playa y bebidas premium. Valoran las experiencias gastronómicas excepcionales.</p>
+            </div>
+            <div>
+                <h3>PAREJAS EXIGENTES</h3>
+                <p>Buscan descansar y relajarse. Valoran los servicios personalizados, suites con todos los servicios, gastronomía excepcional y restaurantes a la carta.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Joia Memorable Experiences -->
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">Experiencias Memorables Joia</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-gift"></i> <strong>Una Bienvenida "WOW":</strong> El huésped debe sentir que ha tomado la decisión correcta desde el primer momento.</li>
+                <li><i class="fa-solid fa-martini-glass"></i> <strong>La Gran Experiencia en Piscina y Playa:</strong> Hacemos que se sientan atendidos y cuidados con momentos de sorpresa y disfrute.</li>
+                <li><i class="fa-solid fa-gem"></i> <strong>Suites Oasis:</strong> Diseñadas para el lujo, la intimidad y la privacidad. Las personalizamos según las preferencias del huésped.</li>
+                <li><i class="fa-solid fa-champagne-glasses"></i> <strong>Noche de Gala:</strong> Una cena de lujo y celebración que permite a los huéspedes vestirse elegantes y disfrutar de sorpresas.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Section_Title - Wave of Change -->
+<div class="slide-container" id="slide10">
+    <div class="section-title-layout">
+        <hr>
+        <h2 style="font-size: 60px;">Wave of Change</h2>
+        <p>Nuestro compromiso con un modelo de turismo responsable.</p>
+        <!-- Imagen del logo eliminada -->
+    </div>
+</div>
+
+<!-- Slide 11: WOC Agenda 20/30 (Iconos reemplazados) -->
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">Nuestra Agenda 20/30</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-recycle"></i></div>
+                <h3>ECONOMÍA CIRCULAR</h3>
+                <p><strong>Objetivos:</strong> Ser libres de residuos para 2025 y neutros en emisiones de carbono para 2030.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-fish"></i></div>
+                <h3>CONSUMO RESPONSABLE</h3>
+                <p><strong>Objetivo:</strong> Que el 100% de nuestro pescado y marisco provenga de fuentes responsables para 2025.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-water"></i></div>
+                <h3>SALUD COSTERA</h3>
+                <p><strong>Objetivo:</strong> Invertir en la salud de los ecosistemas en torno a nuestros hoteles, comprometiéndonos a haberla mejorado para 2030.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: WOC SPI -->
+<div class="slide-container" id="slide12">
+    <h2 class="slide-title">¿Qué es el SPI (Sustainable Performance Index)?</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>Es la **herramienta interna** de Iberostar diseñada para medir el estado y el progreso de nuestra compañía en la consecución de los objetivos de nuestra estrategia de sostenibilidad y de la Agenda 2030.</p>
+                <p>Se calcula tras un proceso de auditoría estandarizado en cada hotel.</p>
+                <h3 style="margin-top: 25px;">Proceso de Auditoría</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-calendar-alt"></i> <strong>Frecuencia:</strong> Se realizan **2 auditorías al año** (cada 6 meses).</li>
+                    <li><i class="fa-solid fa-chart-line"></i> <strong>Objetivo Joia:</strong> Lograr un SPI de **84+** (Líder en Turismo Responsable).</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Áreas Clave de la Auditoría SPI</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-globe"></i> Economía circular (Gestión de Residuos)</li>
+                    <li><i class="fa-solid fa-water"></i> Soluciones basadas en la naturaleza (Corales, Manglares)</li>
+                    <li><i class="fa-solid fa-fish"></i> Blue food (Pescado y Marisco Responsable)</li>
+                    <li><i class="fa-solid fa-temperature-three-quarters"></i> Acción por el clima (Consumo Energético)</li>
+                    <li><i class="fa-solid fa-hands-helping"></i> Conocimiento y compromiso (Tu entrenamiento)</li>
+                    <li><i class="fa-solid fa-star"></i> Otros estándares de sostenibilidad</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: WOC Pillars 1 -->
+<div class="slide-container" id="slide13">
+    <h2 class="slide-title">Nuestros Pilares de Sostenibilidad (Parte 1)</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-recycle"></i></div><h3>Experiencia Circular</h3><p>Reducir nuestro impacto y preservar los recursos naturales.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-smog"></i></div><h3>Huella Consciente</h3><p>Impulsar la innovación para hacer frente al cambio climático.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-shrimp"></i></div><h3>Deliciosamente Responsable</h3><p>Apoyar prácticas y comunidades pesqueras sostenibles.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-heart-pulse"></i></div><h3>Ocean Love</h3><p>Trabajar para crear una experiencia en armonía con la naturaleza.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14: WOC Pillars 2 -->
+<div class="slide-container" id="slide14">
+    <h2 class="slide-title">Nuestros Pilares de Sostenibilidad (Parte 2)</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-users"></i></div><h3>Creando Oportunidades</h3><p>Comprometidos a nutrir y elevar a las personas.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-map-pin"></i></div><h3>Compromiso Local</h3><p>Fomentar destinos resilientes.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-hands-helping"></i></div><h3>Creciendo Juntos</h3><p>Colaborar por un futuro positivo.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 15: WOC Certs & Waste -->
+<div class="slide-container" id="slide15">
+    <h2 class="slide-title">Certificaciones y Separación de Residuos</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Certificaciones Globales</h3>
+                <p>Nuestro compromiso es validado por certificaciones internacionales:</p>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-earth-americas"></i> <strong>Earth Check:</strong> 50 hoteles certificados.</li>
+                    <li><i class="fa-solid fa-flag"></i> <strong>Blue Flag:</strong> 6 playas certificadas.</li>
+                    <li><i class="fa-solid fa-leaf"></i> <strong>LEED:</strong> 1 hotel certificado.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Tu Rol: Separar Residuos (Libres de Residuos 2025)</h3>
+                <p>Es mandatorio que todo el personal separe correctamente los residuos en los contenedores designados:</p>
+                <ul class="bullet-list waste-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-trash grey"></i> Basura General (Rechazo): **Gris**</li>
+                    <li><i class="fa-solid fa-glass-empty green"></i> Vidrio: **Verde**</li>
+                    <li><i class="fa-solid fa-box yellow"></i> Envases: **Amarillo**</li>
+                    <li><i class="fa-solid fa-file-lines blue"></i> Papel y Cartón: **Azul**</li>
+                    <li><i class="fa-solid fa-apple-whole brown"></i> Orgánicos: **Marrón**</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 16: WOC Practical Points -->
+<div class="slide-container" id="slide16">
+    <h2 class="slide-title">Sostenibilidad Práctica: Puntos de Interés</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="image-tile">
+                <div class="icon"><i class="fa-solid fa-disease"></i></div>
+                <p><strong>Laboratorio de Corales:</strong> Trabajamos en la restauración de arrecifes para proteger la vida marina.</p>
+            </div>
+            <div class="image-tile">
+                <div class="icon"><i class="fa-solid fa-tree"></i></div>
+                <p><strong>Reforestación:</strong> Protegemos y restauramos manglares, ecosistemas vitales para mitigar el cambio climático.</p>
+            </div>
+            <div class="image-tile">
+                <div class="icon"><i class="fa-solid fa-cubes"></i></div>
+                <p><strong>Punto Verde 3R:</strong> Donde gestionamos los residuos (Reducir, Reutilizar, Reciclar) con proveedores autorizados.</p>
+            </div>
+            <div class="image-tile">
+                <div class="icon"><i class="fa-solid fa-bee"></i></div>
+                <p><strong>Apiario:</strong> Un conjunto de colmenas para la polinización y producción de miel. Fomenta la biodiversidad local.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 17: Section_Title - Conociendo Joia -->
+<div class="slide-container" id="slide17">
+    <div class="section-title-layout">
+        <hr>
+        <h2>Conociendo Joia Bávaro</h2>
+        <p>Instalaciones y Servicios Clave</p>
+    </div>
+</div>
+
+<!-- Slide 18: Iberostar App (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide18">
+    <h2 class="slide-title">Nuestra Herramienta Clave: La App Iberostar</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 900px; align-self: center;">
+            <h3>Tu Asistente Digital</h3>
+            <p>Debemos **incentivar activamente** a todos nuestros huéspedes a descargar y utilizar la **App de Iberostar**. Es la herramienta principal para una experiencia **ÍNTIMA** y fluida.</p>
+            <h3 style="margin-top: 20px;">Funciones Principales para el Huésped:</h3>
+             <ul style="margin-left: 0px;">
+                <li><i class="fa-solid fa-comments"></i> <strong>Comunicación Directa:</strong> Chatear en tiempo real con su Concierge o Mayordomo asignado.</li>
+                <li><i class="fa-solid fa-concierge-bell"></i> <strong>Solicitar Room Service:</strong> Ver el menú y hacer pedidos directamente desde la App.</li>
+                <li><i class="fa-solid fa-shirt"></i> <strong>Solicitar Lavandería:</strong> Pedir la recogida de ropa para el servicio de lavandería (con costo).</li>
+                <li><i class="fa-solid fa-calendar-days"></i> <strong>Ver Calendario de Actividades:</strong> Consultar el programa de entretenimiento y eventos en tiempo real.</li>
+                <li><i class="fa-solid fa-book-open"></i> <strong>Información del Hotel:</strong> Revisar horarios de restaurantes, menús y el mapa de la propiedad.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 19: Hotel in Numbers (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide19">
+    <h2 class="slide-title">El Hotel en Números</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <ul style="margin-left: 0px;">
+                <li><i class="fa-solid fa-hotel"></i> <strong>Nombre Oficial:</strong> Joia Bávaro by Iberostar (Solo Adultos 18+).</li>
+                <li><i class="fa-solid fa-calendar-alt"></i> <strong>Apertura Original:</strong> 20 de Abril del 2009.</li>
+                <li><i class="fa-solid fa-building-columns"></i> <strong>Complejo:</strong> Parte de un complejo con 5 hoteles Iberostar.</li>
+                <li><i class="fa-solid fa-key"></i> <strong>Habitaciones:</strong> 274 Suites en total.</li>
+                <li><i class="fa-solid fa-utensils"></i> <strong>Restaurantes:</strong> 7 Restaurantes Propios (5 de especialidades + 2 Buffets/Snack Bar).</li>
+                <li><i class="fa-solid fa-water"></i> <strong>Piscinas:</strong> 3 piscinas, Spa y gimnasio.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 20: Suite Typology -->
+<div class="slide-container table-layout" id="slide20">
+    <h2 class="slide-title">Tipología y Ubicación de Suites (Parte 1)</h2>
+    <div class="content-area" style="overflow-y: auto; align-items: flex-start;">
+        <table class="room-details-table">
+            <thead>
+                <tr>
+                    <th>Nomenclatura</th>
+                    <th>Categoría de Habitación</th>
+                    <th>Bloque(s)</th>
+                    <th>Ubicación Clave</th>
+                    <th>Servicio Asociado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>STNHB</td>
+                    <td>Near the Beach</td>
+                    <td>D</td>
+                    <td>Cerca de la Playa</td>
+                    <td>Concierge</td>
+                </tr>
+                <tr>
+                    <td>STOF</td>
+                    <td>Ocean Front</td>
+                    <td>D</td>
+                    <td>Primera línea de Mar</td>
+                    <td>**Mayordomía**</td>
+                </tr>
+                <tr>
+                    <td>STSW</td>
+                    <td>Swim Out</td>
+                    <td>D</td>
+                    <td>Acceso directo a la piscina</td>
+                    <td>**Mayordomía**</td>
+                </tr>
+                <tr>
+                    <td>STVM</td>
+                    <td>Ocean View</td>
+                    <td>C, D, E</td>
+                    <td>Vista al Mar</td>
+                    <td>**Mayordomía**</td>
+                </tr>
+                <tr>
+                    <td>STVL</td>
+                    <td>Lake View</td>
+                    <td>D, E</td>
+                    <td>Vista al Lago (Interior)</td>
+                    <td>Concierge</td>
+                </tr>
+                <tr>
+                    <td>**General**</td>
+                    <td>Upper Floor Suite</td>
+                    <td>General</td>
+                    <td>Piso Superior</td>
+                    <td>Concierge</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Slide 21: Suite Typology (Blocks) -->
+<div class="slide-container" id="slide21">
+    <h2 class="slide-title">Tipología y Ubicación de Suites (Parte 2)</h2>
+    <div class="content-area">
+         <div class="two-column tiled" style="height: 400px;">
+            <div>
+                <h3 style="font-size: 24px;">Bloque D (Central)</h3>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 16px;">
+                    <li>**Nivel 0 (7000):** 7001 - 7042 (Incluye Swim Out)</li>
+                    <li>**Nivel 1 (7100):** 7101 - 7142 (Incluye Suites)</li>
+                    <li>**Nivel 2 (7200):** 7201 - 7242 (Incluye Ocean View)</li>
+                    <li>**Nivel 3 (7300):** 7301 - 7340 (Incluye Ocean View)</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="font-size: 24px;">Bloques C y E (Laterales)</h3>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 16px;">
+                    <li>**Nivel 2C (7200):** 7243 - 7260</li>
+                    <li>**Nivel 3C (7300):** 7343 - 7360</li>
+                    <li style="margin-top: 15px;">**Nivel 2E (7200):** 7261 - 7296</li>
+                    <li>**Nivel 3E (7300):** 7361 - 7396</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 22: Service Types -->
+<div class="slide-container" id="slide22">
+    <h2 class="slide-title">Tipos de Servicio en Habitación</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3>SERVICIO DE MAYORDOMÍA (24h)</h3>
+                <p>Servicio altamente personalizado, disponible 24h, incluyendo asistencia con desempaque, organización del viaje, servicio de minibar personalizado y personalización de almohadas y aromaterapia. Se ofrece a las habitaciones de categoría superior:</p>
+                <ul class="bullet-list" style="margin-left: 0px; margin-top: 10px;">
+                    <li><i class="fa-solid fa-water"></i> Oceanfront (**STOF**)</li>
+                    <li><i class="fa-solid fa-person-swimming"></i> Swim out (**STSW**)</li>
+                    <li><i class="fa-solid fa-binoculars"></i> Vista Mar (**STVM**)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>SERVICIO DE CONCIERGE</h3>
+                <p>Este servicio de atención personalizada se ofrece a las siguientes categorías de habitación:</p>
+                <ul class="bullet-list" style="margin-left: 0px; margin-top: 10px;">
+                    <li><i class="fa-solid fa-key"></i> Suite (ST)</li>
+                    <li><i class="fa-solid fa-arrow-up-from-ground-water"></i> Upper Floor Suite</li>
+                    <li><i class="fa-solid fa-tree"></i> Lake View Suite (**STVL**)</li>
+                    <li><i class="fa-solid fa-umbrella-beach"></i> Near the Beach (**STNHB**)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 23: Gastronomy 1 (Joia) -->
+<div class="slide-container" id="slide23">
+    <h2 class="slide-title">Nuestra Gastronomía (Joia Bávaro)</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-sun"></i></div><h3>Bella Vista (Buffet)</h3><p>Desayuno (7-11), Almuerzo (13-15) y Cena (18:30-22).</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-fish"></i></div><h3>El Galeón (Mar y Tierra)</h3><p>Cena (18:00 - 22:00).</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-leaf"></i></div><h3>Hashira (Japonés)</h3><p>Cena (18:00 - 22:00). **Requiere Reserva**.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-wine-glass"></i></div><h3>Le Tourbillon (Gourmet)</h3><p>Cena (18:00 - 22:00).</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-shrimp"></i></div><h3>Casa de la Playa (Caribeño)</h3><p>Cena (18:00 - 22:00).</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-pizza-slice"></i></div><h3>La Tentazione (Italiano)</h3><p>Cena (18:00 - 22:00).</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 24: Gastronomy 2 (Bars & Cellar) -->
+<div class="slide-container" id="slide24">
+    <h2 class="slide-title">Nuestra Gastronomía (Bares & Cellar)</h2>
+    <div class="content-area">
+        <div class="two-column">
+             <div>
+                <h3>Bares Principales</h3>
+                 <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-cocktail"></i> <strong>El Mirador (Lobby Bar):</strong> 7:00 a 1:00</li>
+                    <li><i class="fa-solid fa-water-ladder"></i> <strong>Larimar (Pool Bar):</strong> 9:00 a 18:00</li>
+                    <li><i class="fa-solid fa-ship"></i> <strong>Cala Esmeralda (Bar Velero):</strong> 23:00 a 1:00</li>
+                    <li><i class="fa-solid fa-smoking"></i> <strong>Robusto (Cigar Bar):</strong> 18:00 a 23:00</li>
+                </ul>
+            </div>
+            <div>
+                <h3>The Wine Cellar</h3>
+                <p>Ofrecemos una extensa cava de vinos de diferentes regiones con un **costo adicional**.</p>
+                <p>También se pueden programar **catas de vino** personalizadas (con costo) para grupos o parejas. Para más información, contacta a los **Sommeliers** del hotel.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 25: Gastronomy 3 (Complex Restaurants) -->
+<div class="slide-container" id="slide25">
+    <h2 class="slide-title">Restaurantes de Especialidad del Complejo</h2>
+    <div class="content-area">
+        <div class="two-column restaurant-list">
+            <div>
+                <h3>Selection Bávaro (Reservas requeridas)</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-water"></i> El Faro (Especialidad)</li>
+                    <li><i class="fa-solid fa-shrimp"></i> Salt & Soul (Mariscos)</li>
+                    <li><i class="fa-solid fa-pizza-slice"></i> Il Forno (Italiano) - **Requiere Reserva**</li>
+                    <li><i class="fa-solid fa-fish-fins"></i> Kabuki (Japonés) - **Requiere Reserva**</li>
+                    <li><i class="fa-solid fa-olive"></i> La Dorada (Griego)</li>
+                    <li><i class="fa-solid fa-drumstick-bite"></i> Brave (Steakhouse) - **Requiere Reserva**</li>
+                    <li><i class="fa-solid fa-pepper-hot"></i> El Tapatío (Mexicano)</li>
+                    <li><i class="fa-solid fa-utensils"></i> La Coupole (Bistro)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Waves (Reservas requeridas)</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-pepper-hot"></i> La Palapita (Latinoamericano)</li>
+                    <li><i class="fa-solid fa-wine-glass"></i> La Sibila (Francés) - **Requiere Reserva**</li>
+                    <li><i class="fa-solid fa-drumstick-bite"></i> La Marimba (A la parrilla)</li>
+                </ul>
+                <h3 style="margin-top: 20px;">Acceso de Huéspedes Joia</h3>
+                <p>Nuestros huéspedes tienen acceso a todos estos restaurantes (y áreas comunes) del complejo. Es tu deber asistirles con las reservas necesarias.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 26: Other Facilities -->
+<div class="slide-container" id="slide26">
+    <h2 class="slide-title">Otras Instalaciones y Servicios Joia</h2>
+    <div class="content-area">
+        <div class="bullet-list" style="font-size: 16px; line-height: 1.5; columns: 2; gap: 40px;">
+            <ul>
+                <li><i class="fa-solid fa-concierge-bell"></i> <strong>Room Service 24h:</strong> Servicio incluido (sin costo). Se solicita vía la App o por teléfono.</li>
+                <li><i class="fa-solid fa-spa"></i> <strong>Spa Sensations:</strong> 2 Spas (uno en Joia, otro en el complejo). Se incluye el circuito de aguas.</li>
+                <li><i class="fa-solid fa-dumbbell"></i> <strong>Gimnasio:</strong> 2 gimnasios. El de Joia tiene vistas al mar (7am - 7pm).</li>
+                <li><i class="fa-solid fa-golf-ball-tee"></i> <strong>Campo de Golf:</strong> Iberostar Bávaro Golf Club (18 hoyos, Par 72).</li>
+                <li><i class="fa-solid fa-house-lock"></i> <strong>Scape Room:</strong> En Plaza Bávaro. Costo: **$30 USD p/p**. (10am - 10pm).</li>
+                <li><i class="fa-solid fa-person-swimming"></i> <strong>Diving Center:</strong> (9am - 5pm). Deportes No Motorizados: Seguro de **$20 USD** (1h/día).</li>
+                <li><i class="fa-solid fa-table-tennis-paddle-ball"></i> <strong>Canchas Deportivas:</strong> (7am - 7pm). 4 Pickleball, 4 Tenis (2 en Joia), 1 Basket.</li>
+                <li><i class="fa-solid fa-suitcase-medical"></i> <strong>Servicio Médico:</strong> 24h en Plaza Bávaro. **(Servicio externo con costo)**.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 27: Extras & Loans -->
+<div class="slide-container" id="slide27">
+    <h2 class="slide-title">Servicios Extras y Artículos de Préstamo</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Ventas Extra (Up-selling)</h3>
+                <p>Contamos con un catálogo de ventas extra para crear experiencias **SENSACIONALES** (con costo adicional). Debes fomentar su venta.</p>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-heart"></i> Cenas Románticas</li>
+                    <li><i class="fa-solid fa-box"></i> Paquetes de Decoración y Arreglos de Flores</li>
+                    <li><i class="fa-solid fa-cake-candles"></i> Pasteles y Repostería Especial</li>
+                    <li><i class="fa-solid fa-star"></i> Accesos al Servicio Star Prestige</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Artículos de Préstamo (Sin Costo)</h3>
+                <p>Mejoramos el confort de la suite de nuestros huéspedes con esta variedad de artículos que pueden solicitar:</p>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-plug"></i> Power Banks (Cargadores Portátiles)</li>
+                    <li><i class="fa-solid fa-fan"></i> Abanicos</li>
+                    <li><i class="fa-solid fa-temperature-arrow-up"></i> Hervidores de Agua</li>
+                    <li><i class="fa-solid fa-ruler-combined"></i> Planchas de Pelo</li>
+                    <li><i class="fa-solid fa-bed"></i> Almohadas (Cervicales, de plumas, anatómicas)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 28: FAQ 1 - General -->
+<div class="slide-container" id="slide28">
+    <h2 class="slide-title">Preguntas Frecuentes (FAQ) - General y Logística</h2>
+    <div class="content-area">
+        <div class="bullet-list" style="width: 100%; max-width: 1000px;">
+            <ul>
+                <li><i class="fa-solid fa-clock"></i> **Check-out:** La hora de check-out es a las **12:00 p.m.**</li>
+                <li><i class="fa-solid fa-road"></i> **Aeropuerto:** Se encuentra a alrededor de **40 minutos** en auto desde el hotel.</li>
+                <li><i class="fa-solid fa-wifi"></i> **Wi-Fi:** Está incluido. Se conecta usando el **apellido** y **número de habitación**.</li>
+                <li><i class="fa-solid fa-lock"></i> **Caja Fuerte:** Si se bloquea, contacte a su **concierge o mayordomo**, el cual le asistirá junto a un seguridad.</li>
+                <li><i class="fa-solid fa-bus"></i> **Traslados:** El hotel ofrece **traslados gratuitos** desde/hacia PUJ para reservas directas.</li>
+                <li><i class="fa-solid fa-building-columns"></i> **Acceso a Hoteles:** Por ser huésped Joia, pueden acceder a **todas las instalaciones y áreas comunes del complejo** (excepto áreas de miembros).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 29: FAQ 2 - Food/Drink -->
+<div class="slide-container" id="slide29">
+    <h2 class="slide-title">Preguntas Frecuentes (FAQ) - Comida y Bebida</h2>
+    <div class="content-area">
+         <div class="bullet-list" style="width: 100%; max-width: 1000px;">
+            <ul>
+                <li><i class="fa-solid fa-concierge-bell"></i> **Room Service:** Servicio incluido **24 horas**. Se puede solicitar a través de la App de Iberostar **o llamando a las extensiones internas**.</li>
+                <li><i class="fa-solid fa-utensils"></i> **Reservas Joia:** Solo **Hashira (Japonés)** requiere reserva; los demás son **First Come First Served** (orden de llegada).</li>
+                <li><i class="fa-solid fa-calendar-check"></i> **Reservas Complejo:** Se requiere reserva en: **Il Forno**, **Kabuki**, **Brave** y **La Sibila**.</li>
+                <li><i class="fa-solid fa-wheat-awn"></i> **Restricciones:** Sí, en todos los restaurantes contamos con opciones (Gluten free, veganos, vegetarianos, etc.).</li>
+                <li><i class="fa-solid fa-sun"></i> **Buffets:** **Bella Vista** (Desayuno 7-11am, Almuerzo 1-3pm, Cena 6:30-10pm). **La Perla** (Almuerzo 12-4pm).</li>
+                <li><i class="fa-solid fa-wine-bottle"></i> **Minibar:** Todas las amenidades están incluidas y se reponen diariamente (9am a 5pm).</li>
+                <li><i class="fa-solid fa-glass-water"></i> **Agua (Ecología):** Se repone en **botellas de cristal** debido a nuestra iniciativa Wave of Change (no usamos plástico de un solo uso).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 30: FAQ 3 - Leisure/Services -->
+<div class="slide-container" id="slide30">
+    <h2 class="slide-title">Preguntas Frecuentes (FAQ) - Ocio y Servicios</h2>
+    <div class="content-area">
+         <div class="bullet-list" style="width: 100%; max-width: 1000px;">
+            <ul>
+                <li><i class="fa-solid fa-masks-theater"></i> **Shows:** Son a las **9:30 p.m.** en el teatro La Scala. Las actividades diarias se ven en la App y pantallas de servicio.</li>
+                <li><i class="fa-solid fa-umbrella-beach"></i> **Cabañas/Piscinas:** Las cabañas **no se reservan**; son por orden de llegada (desde 7:00 a.m.). Horario piscinas: 7:00 a.m. a 7:00 p.m.</li>
+                <li><i class="fa-solid fa-dumbbell"></i> **Gimnasio:** El gimnasio Joia abre de **7:00 a.m. a 7:00 p.m.**</li>
+                <li><i class="fa-solid fa-shirt"></i> **Lavandería:** Servicio disponible con **costo extra**. Se solicita a través de la App de Iberostar.</li>
+                <li><i class="fa-solid fa-map"></i> **Mapa:** Disponible en la **App de Iberostar** o detrás de la puerta de su habitación.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 31: FAQ 4 - Memberships -->
+<div class="slide-container" id="slide31">
+    <h2 class="slide-title">Preguntas Frecuentes (FAQ) - Membresías (The Club)</h2>
+    <div class="content-area">
+         <div class="bullet-list" style="width: 100%; max-width: 1000px;">
+            <ul>
+                <li><i class="fa-solid fa-medal"></i> **Beneficios Club:** Acceso al SP lounge de lobby y playa, descuentos, paquete de bienvenida, transporte, spa o golf diario (depende de la membresía).</li>
+                <li><i class="fa-solid fa-wine-glass"></i> **Vinos Club:** El paquete de bienvenida llega al día siguiente si no llega a la llegada. Se les deja llevar las botellas de bienvenida si lo desean.</li>
+                <li><i class="fa-solid fa-clock-rotate-left"></i> **Check-out/Extensión:** Se verifica disponibilidad para el Late Check-Out (LCO) complementario (hasta 3pm).</li>
+                <li><i class="fa-solid fa-credit-card"></i> **Pagos Club:** Las reservas o extensiones Club **no se pueden pagar directamente en el hotel**. Debe ser mediante link de pago (asistir enviando el correo a Member Services).</li>
+                <li><i class="fa-solid fa-user-tie"></i> **Dudas de Contrato:** Serán aclaradas por su **Elite o Representante** (encargados de contestar cualquier duda).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 32: Section_Title - Loyalty & Standards -->
+<div class="slide-container" id="slide32">
+    <div class="section-title-layout">
+        <hr>
+        <h2>Nuestro Huésped, Nuestra Prioridad</h2>
+        <p>Lealtad y Estándares de Servicio</p>
+    </div>
+</div>
+
+<!-- Slide 33: Loyalty Programs -->
+<div class="slide-container" id="slide33">
+    <h2 class="slide-title">Programas de Lealtad y VIP</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3>IHG One Rewards</h3>
+                <p>Es nuestra alianza de hospitalidad global con más de 6,100 hoteles. Los socios acumulan puntos y tienen 5 niveles de ventajas: Club, Silver Elite, Gold Elite, Platinum Elite y Diamond Elite.</p>
+            </div>
+            <div>
+                <h3>Iberostar The Club</h3>
+                <p>Es nuestro programa exclusivo para clientes preferenciales (membresía). Ofrece un trato extraordinario, privilegios y salas lounge exclusivas en el lobby y la playa.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 34: Star Prestige (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide34">
+    <h2 class="slide-title">¿Qué es Star Prestige?</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <p>Es un servicio que garantiza experiencias únicas a nuestros clientes más exigentes. Se puede comprar en la web o en Recepción.</p>
+            <ul style="margin-left: 0px;">
+                <li><i class="fa-solid fa-user-check"></i> Check-in privado en Lounge.</li>
+                <li><i class="fa-solid fa-umbrella-beach"></i> Área de playa privada con camas balinesas.</li>
+                <li><i class="fa-solid fa-wine-bottle"></i> Minibar de bienvenida personalizado.</li>
+                <li><i class="fa-solid fa-water-ladder"></i> Acceso a áreas húmedas del Spa.</li>
+                <li><i class="fa-solid fa-tags"></i> Descuentos en Golf y tratamientos de Spa.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 35: Standard: Reception -->
+<div class="slide-container" id="slide35">
+    <h2 class="slide-title">Estándar: Recepción (Check-in / Check-out)</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-id-card"></i> <strong>Registro de Entrada:</strong> Realiza el check-in, escanea pasaportes, confirma datos de reserva y ofrece el programa de lealtad (IHG One Rewards).</li>
+                <li><i class="fa-solid fa-clipboard-list"></i> <strong>Atención al Huésped:</strong> Asiste con cambios de habitación, manejo de divisas, depósito de seguridad y cualquier consulta general.</li>
+                <li><i class="fa-solid fa-right-from-bracket"></i> <strong>Registro de Salida:</strong> Gestiona el check-out, verifica cargos pendientes, y solicita el llenado de la encuesta de satisfacción (QR).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 36: Standard: Concierge (Role) -->
+<div class="slide-container" id="slide36">
+    <h2 class="slide-title">Estándar: Concierge (RRPP) - Rol y Servicios</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-user-tie"></i> <strong>Embajador de Servicio:</strong> Eres el facilitador principal. Tu objetivo es la **GENEROSIDAD, RELACIÓN y NOVEDAD** para crear una experiencia memorable.</li>
+                <li><i class="fa-solid fa-calendar-alt"></i> <strong>Coordinación de Reservas:</strong> Gestiona reservaciones en restaurantes de especialidad, excursiones, servicio despertador y transporte.</li>
+                <li><i class="fa-solid fa-concierge-bell"></i> <strong>Servicios de Apoyo:</strong> Coordina el servicio de lavandería, brinda sugerencias sobre el hotel o el área local, y ofrece servicios no incluidos (cenas románticas, shows).</li>
+                <li><i class="fa-solid fa-comment-dots"></i> <strong>Punto de Contacto:</strong> Estar disponible de 7:00 a 23:00 para cualquier necesidad del huésped que no requiera Mayordomía.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 37: Standard: Butler (Partner) (LAYOUT CORREGIDO) -->
+<div class="slide-container" id="slide37">
+    <h2 class="slide-title">El Butler: Tu socio estratégico (Servicio de Mayordomía)</h2>
+    <div class="content-area">
+        <!-- CORRECCIÓN DE LAYOUT: Se utiliza la clase .butler-list (CSS personalizado) para evitar el solapamiento de .bullet-list -->
+        <div class="two-column butler-list">
+            <div>
+                <h3><i class="fa-solid fa-comments"></i>Contacto y Asistencia</h3>
+                <ul>
+                    <li><i class="fa-solid fa-clipboard-check"></i> <strong>Seguimiento Diario:</strong> Contacto personal para ofrecer servicios y asegurar que la experiencia exceda las expectativas.</li>
+                    <li><i class="fa-solid fa-hotel"></i> <strong>Conocimiento Experto:</strong> Información completa sobre todas las instalaciones del hotel y el área local.</li>
+                    <li><i class="fa-solid fa-map-pin"></i> <strong>Orientación en Habitación:</strong> Explicación de todas las características y comodidades de la suite a la llegada.</li>
+                </ul>
+                <h3 style="margin-top: 20px;"><i class="fa-solid fa-calendar-alt"></i>Concierge y Reservas</h3>
+                <ul>
+                    <li><i class="fa-solid fa-utensils"></i> <strong>Restaurantes Temáticos:</strong> Gestionará las reservas necesarias (ej. Japonés).</li>
+                    <li><i class="fa-solid fa-gamepad"></i> <strong>Actividades y Ocio:</strong> Manejo de la información y la reserva de entretenimiento, excursiones, Spa y horarios de Golf.</li>
+                </ul>
+            </div>
+            <div>
+                <h3><i class="fa-solid fa-suitcase-rolling"></i>Cuidado de Equipaje</h3>
+                <ul>
+                    <li><i class="fa-solid fa-box-open"></i> <strong>Servicio de Desempaque:</strong> Asistencia con el desempaque a la llegada (previa solicitud).</li>
+                    <li><i class="fa-solid fa-box-archive"></i> <strong>Servicio de Empaque:</strong> Asistencia con el empaque la noche antes del check-out (previa solicitud).</li>
+                    <li><i class="fa-solid fa-spray-can-sparkles"></i> <strong>Planchado:</strong> Asistencia de planchado a la llegada (previa solicitud).</li>
+                </ul>
+                <h3 style="margin-top: 20px;"><i class="fa-solid fa-star-of-life"></i>Detalles y Sorpresas</h3>
+                <ul>
+                    <li><i class="fa-solid fa-bed"></i> <strong>Menú de Almohadas:</strong> Selección personalizada para el descanso.</li>
+                    <li><i class="fa-solid fa-hand-holding-box"></i> <strong>Gestión de Ropa:</strong> Manejo de servicios de limpieza de zapatos, lavandería y planchado.</li>
+                    <li><i class="fa-solid fa-gift"></i> <strong>Ocasiones Especiales:</strong> Identificar y organizar sorpresas para cumpleaños, aniversarios, etc.</li>
+                    <li><i class="fa-solid fa-wine-bottle"></i> <strong>Personalización:</strong> Minibar adaptado a las preferencias del huésped.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 38: Checklist (Morning) -->
+<div class="slide-container checklist-layout" id="slide38">
+    <h2 class="slide-title">Checklist Operativo Concierge - Turno Matutino</h2>
+    <div class="content-area">
+        <div class="two-column" style="gap: 20px;">
+            <div class="supervisor-col">
+                <h3>Tareas Fijas por Estación</h3>
+                <ul style="padding-left: 15px; margin-bottom: 25px;">
+                    <li><i class="fa-solid fa-phone-volume"></i> <strong>MESA 1:</strong> Llamada de cortesía + Formato de llamadas de despedida.</li>
+                    <li><i class="fa-solid fa-concierge-bell"></i> <strong>RS:</strong> Room Service + Chat de Mayordomos (Seguimiento).</li>
+                    <li><i class="fa-solid fa-laptop"></i> <strong>OFICINA:</strong> Trabajo de oficina + Cupones.</li>
+                    <li><i class="fa-solid fa-user-group"></i> <strong>MESA 2D:</strong> Llamadas de cortesía + Copiar el grupo.</li>
+                </ul>
+                <h3 class="note">Nota: Pre-Arrival y Ventas</h3>
+                <p style="font-size: 15px;">**Siempre** debe sacar tiempo para:
+                    <ul style="padding-left: 15px; font-size: 15px;">
+                        <li>Enviar los correos de Pre-Arrival asignados.</li>
+                        <li>Dar seguimiento a las ventas por correo que están en proceso.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="concierge-col">
+                <h3>Tareas Asignables (Rotación por Supervisor)</h3>
+                <ul style="padding-left: 15px;">
+                    <li><i class="fa-solid fa-clipboard-list"></i> Repartir trabajo y seguimiento a Concierges.</li>
+                    <li><i class="fa-solid fa-users-viewfinder"></i> Dar rondas a los Concierges (3 veces por turno).</li>
+                    <li><i class="fa-solid fa-calendar-check"></i> Verificar amenidades VIPs y agendar bienvenida/despedida.</li>
+                    <li><i class="fa-solid fa-check-to-slot"></i> Dar seguimiento a la actualización de incidencias.</li>
+                    <li><i class="fa-solid fa-envelope-open-text"></i> Responder bandeja de correos.</li>
+                    <li><i class="fa-solid fa-print"></i> Preparar letreros de eventos/Imprimir menús cerrados.</li>
+                    <li><i class="fa-solid fa-user-shield"></i> Supervisar el trabajo del turno/Contactar incidencias puntuales.</li>
+                    <li><i class="fa-solid fa-chart-line"></i> Trabajar comentarios ANTE/INSTRASTAY.</li>
+                    <li><i class="fa-solid fa-sitemap"></i> Verificar pantallas de salones para eventos/Presupuesto atenciones.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 39: Checklist (Afternoon) (ICONOS HOMOLOGADOS) -->
+<div class="slide-container checklist-layout" id="slide39">
+    <h2 class="slide-title">Checklist Operativo Concierge - Turno Vespertino</h2>
+    <div class="content-area">
+        <div class="two-column" style="gap: 20px;">
+            <div class="supervisor-col">
+                <h3>Tareas Fijas por Estación</h3>
+                <ul style="padding-left: 15px; margin-bottom: 25px;">
+                    <!-- CORRECCIÓN DE ICONOS -->
+                    <li><i class="fa-solid fa-phone-volume"></i> <strong>MESA 1:</strong> Atenciones + Llamadas de despedida + Interacciones del D.</li>
+                    <li><i class="fa-solid fa-concierge-bell"></i> <strong>RS:</strong> Room Service + Llamadas de despedida + Interacciones del C + Montar Románticas.</li>
+                    <li><i class="fa-solid fa-laptop"></i> <strong>OFICINA:</strong> Oficina + Star Check.</li>
+                    <li><i class="fa-solid fa-user-group"></i> <strong>MESA 2D:</strong> Reporte de cenas + Interacciones del E.</li>
+                </ul>
+                <h3 class="note">Nota: Pre-Arrival y Ventas</h3>
+                <p style="font-size: 15px;">**Siempre** debe sacar tiempo para:
+                    <ul style="padding-left: 15px; font-size: 15px;">
+                        <li>Enviar los correos de Pre-Arrival asignados.</li>
+                        <li>Dar seguimiento a las ventas por correo que están en proceso.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="concierge-col">
+                <h3>Tareas Asignables (Rotación por Supervisor)</h3>
+                <ul style="padding-left: 15px;">
+                    <li><i class="fa-solid fa-clipboard-list"></i> Repartir trabajo y seguimiento a Concierges.</li>
+                    <li><i class="fa-solid fa-users-viewfinder"></i> Dar rondas a los Concierges (3 veces por turno).</li>
+                    <li><i class="fa-solid fa-calendar-check"></i> Dar seguimiento a las incidencias pendientes.</li>
+                    <li><i class="fa-solid fa-envelope-open-text"></i> Responder bandeja de correos.</li>
+                    <li><i class="fa-solid fa-gift"></i> Realizar amenidades de bienvenida/despedida VIPS día siguiente.</li>
+                    <li><i class="fa-solid fa-utensils"></i> Entregar menús/Recibir grupos o VIPS en restaurantes.</li>
+                    <li><i class="fa-solid fa-memo"></i> Enviar memo de cenas románticas/Dejar pantalla salones OK.</li>
+                    <li><i class="fa-solid fa-user-shield"></i> Supervisar trabajo Concierges/Repasar estándares.</li>
+                    <li><i class="fa-solid fa-chart-line"></i> Trabajar INSTRASTAY/Seguimiento a ventas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 40: Standard: Pre-Arrival -->
+<div class="slide-container" id="slide40">
+    <h2 class="slide-title">Estándar: Contacto Pre-Arrival (Email)</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3>1. Contacto Inicial (Post-Reserva)</h3>
+                <p>El huésped recibe automáticamente un correo de confirmación de reserva que incluye:</p>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-thumbs-up"></i> Agradecimiento y confirmación de compra.</li>
+                    <li><i class="fa-solid fa-file-invoice"></i> Detalles de la reserva (ej. categoría superior).</li>
+                    <li><i class="fa-solid fa-plane"></i> Información sobre vuelos y link para el transfer.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>2. Seguimiento Personalizado (1 Semana Antes)</h3>
+                <p>Relaciones Públicas/Recepción envía un email personalizado para:</p>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-clipboard-check"></i> **Confirmar Logística:** Transfer, itinerario de vuelos.</li>
+                    <li><i class="fa-solid fa-heart"></i> **Personalizar la Estancia:** Preguntar preferencias, alergias, etc.</li>
+                    <li><i class="fa-solid fa-keyboard"></i> **Acelerar la Llegada:** Solicitar el Web Check-in o el pasaporte.</li>
+                    <li><i class="fa-solid fa-arrow-up-right-dots"></i> **Up-selling:** Ofrecer Shows y servicios extra.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 41: Standard: Phone Etiquette -->
+<div class="slide-container" id="slide41">
+    <h2 class="slide-title">Estándar: Etiqueta Telefónica</h2>
+    <div class="content-area">
+        <div class="two-column tiled">
+            <div>
+                <h3>Saludo, Tono y Nombre</h3>
+                <p>Contesta siempre antes del tercer timbre, con una sonrisa y un **tono de voz agradable y alegre**.</p>
+                <p class="mt-4" style="margin-top: 15px;"><strong>Fraseología (Ej. Interno):</strong> "Recepción, buenas tardes, le atiende [Tu Nombre], ¿cómo le puedo servir?"</p>
+                <p class="mt-4" style="margin-top: 15px;"><strong>Fraseología (Ej. Externo):</strong> "Joia Bávaro, ¡es un placer!, le atiende [Tu Nombre], ¿en qué le asisto?"</p>
+                <p class="mt-4" style="margin-top: 15px;">**RECUERDA:** Siempre que sea posible, dirígete al huésped por su nombre (Sr. o Sra. [Apellido]).</p>
+            </div>
+            <div>
+                <h3>Espera, Transferencias y Solicitud de Datos</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-pause-circle"></i> **Espera/Transferencia:** Antes de poner en espera, informa y ofrece una devolución de llamada. Nunca interrumpas.</li>
+                    <li><i class="fa-solid fa-list-ol"></i> **Solicitud de Info:** Utiliza oraciones completas. **EVITA:** "¿Nombre?". **USA:** "¿Me podría indicar, por favor, su nombre completo?"</li>
+                    <li><i class="fa-solid fa-handshake-simple"></i> **Despedida:** Siempre agradece al huésped por su llamada o consulta ("Gracias por llamar a Joia Bávaro. Que tenga un excelente día").</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 42: Standard: Knowledge -->
+<div class="slide-container" id="slide42">
+    <h2 class="slide-title">Estándar: Conocimiento y Solución de Problemas</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-hotel"></i> <strong>Experto en Joia Bávaro:</strong> Es **obligatorio** tener conocimiento actualizado sobre todos los servicios, horarios, instalaciones y promociones del hotel para responder con confianza. ¡Estudia tu manual!</li>
+                <li><i class="fa-solid fa-map-location-dot"></i> <strong>Guía Local:</strong> Debes poder informar al huésped sobre el área local (puntos de interés, tiendas) y proporcionar indicaciones claras o recomendar opciones de transporte.</li>
+                <li><i class="fa-solid fa-circle-question"></i> <strong>Respuesta Rápida y Profesional:</strong> Debes estar preparado para responder las consultas del huésped. Si no tienes la respuesta inmediata, **nunca digas "No sé"**. Toma nota, busca la información, y garantiza una respuesta lo antes posible.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 43: Standard: Complaints (Step 1) (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide43">
+    <h2 class="slide-title">Protocolo de Manejo de Quejas (Paso 1: Atención)</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <h3>Paso 1: Atención y Empatía</h3>
+            <p>Una queja es una oportunidad. Tu reacción inicial define el resultado.</p>
+             <ul style="margin-left: 0px; margin-top: 20px;">
+                <li><i class="fa-solid fa-user-secret"></i> Si es posible, lleva al huésped a un **lugar discreto/aislado**.</li>
+                <li><i class="fa-solid fa-id-badge"></i> Preséntate (**nombre y puesto**) para generar confianza.</li>
+                <li><i class="fa-solid fa-headset"></i> **Escucha sin interrumpir** y utiliza un tono de voz **más bajo** que el del huésped para desescalar la situación.</li>
+                <li><i class="fa-solid fa-hand-holding-heart"></i> Ofrece una **disculpa sincera** y agradece que comparta su malestar.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 44: Standard: Complaints (Steps 2-3) -->
+<div class="slide-container" id="slide44">
+    <h2 class="slide-title">Protocolo de Manejo de Quejas (Pasos 2 y 3: Solución)</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Paso 2: Solución y Opciones</h3>
+                 <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-user"></i> Utiliza el **nombre del huésped** para personalizar la atención.</li>
+                    <li><i class="fa-solid fa-puzzle-piece"></i> Indica claramente la **acción** inmediata que vas a tomar.</li>
+                    <li><i class="fa-solid fa-code-branch"></i> Si el huésped no acepta la primera opción, ofrece **dos opciones alternativas** y pregunta: "¿Qué o cuál prefiere?".</li>
+                    <li><i class="fa-solid fa-user-shield"></i> Si requieres asistencia superior, **llama al supervisor y explíicale la situación** de antemano.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Paso 3: Seguimiento y Cierre</h3>
+                 <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-check-double"></i> Una vez resuelta la situación, **llama al huésped** o visítalo para asegurar su satisfacción total.</li>
+                    <li><i class="fa-solid fa-clipboard-check"></i> Si la solución fue gestionada por otro departamento, asegúrate de que el departamento cumplió y luego llama al huésped.</li>
+                    <li><i class="fa-solid fa-book"></i> **Registra la queja** y su solución en **Eguest Manager** y **New Hotel**.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 45: Standard: Admin & Workspace -->
+<div class="slide-container" id="slide45">
+    <h2 class="slide-title">Estándar: Administración y Puesto de Trabajo</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-envelope"></i></div><h3>Gestión de Email</h3><p>Todos los correos electrónicos de huéspedes deben tener respuesta en un plazo máximo de **48 horas**. La comunicación proactiva refleja nuestro servicio "ÍNTIMA".</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-box-open"></i></div><h3>Servicio de Paquetería</h3><p>Ofrecemos servicio de recepción y envío de paquetería a través de terceros. Asegúrate de cobrar al huésped la tarifa establecida y documentar el proceso.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-desktop"></i></div><h3>Apariencia del Puesto</h3><p>El área visible detrás del mostrador debe estar **libre de desorden u obstáculos**. **Prohibido** colocar material publicitario personal o no autorizado.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 46: Section_Title - Norms & Conduct -->
+<div class="slide-container" id="slide46">
+    <div class="section-title-layout">
+        <hr>
+        <h2>Normas y Conducta Profesional</h2>
+        <p>Nuestra Imagen y Nuestro Entorno</p>
+    </div>
+</div>
+
+<!-- Slide 47: Norms: Appearance (Base) (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide47">
+    <h2 class="slide-title">Estándar: Apariencia Personal (Base)</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <h3>Aseo Personal (Mandatorio)</h3>
+            <ul style="margin-left: 0px;">
+                <li><i class="fa-solid fa-shower"></i> Baño diario obligatorio.</li>
+                <li><i class="fa-solid fa-toothbrush"></i> Aseo bucal después de cada alimento.</li>
+                <li><i class="fa-solid fa-spray-can"></i> Uso de desodorante/antitranspirante.</li>
+                <li><i class="fa-solid fa-ban-smoking"></i> **Evitar Fumar** durante la jornada laboral.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 48: Norms: Appearance (Women) -->
+<div class="slide-container" id="slide48">
+    <h2 class="slide-title">Estándar: Apariencia: Colaboradoras</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Cabello y Maquillaje</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-scissors"></i> **Cabello:** Tonos naturales. Si es largo (debajo del cuello), debe ir **recogido**. (Uso de red obligatorio en áreas de Cocina/Stewards).</li>
+                    <li><i class="fa-solid fa-magic-wand-sparkles"></i> **Maquillaje:** Debe ser **discreto y en tonos naturales**. Evitar el exceso.</li>
+                </ul>
+                <h3>Uñas, Joyería y Aroma</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-hand-sparkles"></i> **Uñas:** Limpias, esmaltadas con **colores neutros** y no más largas de **1 cm**. (Cortas y sin esmalte en áreas de alimentos).</li>
+                    <li><i class="fa-solid fa-gem"></i> **Joyería:** Se permite **reloj pequeño** y **aretes pequeños**. **Prohibido piercings faciales**.</li>
+                    <li><i class="fa-solid fa-wind"></i> **Aroma:** Perfume **suave y discreto**. Prohibido en áreas de Cocina/Stewards.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Zapatos (Recepción / Oficina)</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-shoe-prints"></i> **Tipo:** Cerrados, limpios y en buen estado.</li>
+                    <li><i class="fa-solid fa-ruler-vertical"></i> **Tacón:** Altura entre **3 cm y 10 cm**.</li>
+                </ul>
+                <h3 style="margin-top: 15px;">Zapatos (Áreas Operativas)</h3>
+                <p>Las colaboradoras de Cocina, Steward, B&R, Ama de Llaves, Áreas Públicas, deberán utilizar calzado **Antiderrapante**.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 49: Norms: Appearance (Men) -->
+<div class="slide-container" id="slide49">
+    <h2 class="slide-title">Estándar: Apariencia: Colaboradores</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3>Cabello y Rostro</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-user-ninja"></i> **Cabello:** Corto, peinado y con tintes de color natural. (Uso de red en áreas de Cocina/Stewards).</li>
+                    <li><i class="fa-solid fa-user-xmark"></i> **Rostro (Mandatorio):** **Sin barba ni bigote**. Patilla recortada.</li>
+                </ul>
+                <h3>Uñas y Cinturón</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-hand"></i> **Uñas:** Limpias, cortas y **sin esmalte**.</li>
+                    <li><i class="fa-solid fa-circle-notch"></i> **Cinturón:** Color acorde al uniforme, con hebilla discreta.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Zapatos (Recepción / Oficina)</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-shoe-prints"></i> **Tipo:** Cerrados, limpios, lustrados y en buen estado. Color acorde al uniforme.</li>
+                </ul>
+                <h3>Joyería y Aroma</h3>
+                <ul class="bullet-list" style="margin-left: 0px;">
+                    <li><i class="fa-solid fa-gem"></i> **Joyería:** Se permite solo **reloj discreto**. **Prohibido** aretes, anillos, cadenas, pulseras y piercings.</li>
+                    <li><i class="fa-solid fa-wind"></i> **Aroma:** Loción **suave y discreta**. Prohibido en áreas de Cocina/Stewards.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 50: Norms: Uniform & Badge -->
+<div class="slide-container" id="slide50">
+    <h2 class="slide-title">Estándar: Uniformidad y Gafete</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-shirt"></i> <strong>Uniforme:</strong> Debe estar **completo, limpio, planchado** y en perfecto estado. La camiseta interior debe ser del color adecuado.</li>
+                <li><i class="fa-solid fa-id-card-clip"></i> <strong>Gafete:</strong> **Siempre visible** a la altura del pecho del lado izquierdo. Debe estar limpio, en buen estado, y con el nombre claro.</li>
+                <li><i class="fa-solid fa-award"></i> <strong>Pines y Adornos:</strong> Los pines deben estar colocados dos dedos por arriba del gafete y deben ser **solamente los autorizados por la empresa**.</li>
+                <li><i class="fa-solid fa-ban"></i> <strong>Joyería de Alto Riesgo (A&B):** El uso de cualquier tipo de joyería (anillos, pulseras, etc.) está **estrictamente prohibido** en Cocina, Stewards y B&R por seguridad e higiene.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 51: Norms: Conduct -->
+<div class="slide-container" id="slide51">
+    <h2 class="slide-title">Políticas Clave de Conducta</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile"><div class="icon"><i class="fa-solid fa-mobile-slash"></i></div><h3>Uso del Móvil</h3><p>**Prohibido** el uso del celular personal en horario de trabajo y en presencia de huéspedes. Es un motivo de despido disciplinario (Art. 146).</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-users"></i></div><h3>Trabajo en Equipo</h3><p>La buena comunicación es clave. **"No te quedes con la información, compártela con el Equipo!"** Confía en tu equipo para alcanzar las metas comunes.</p></div>
+            <div class="tile"><div class="icon"><i class="fa-solid fa-handshake-slash"></i></div><h3>Acoso y Contacto</h3><p>Tolerancia CERO al acoso. El huésped NO es tu amigo. Evita el contacto físico (a menos que el huésped tome la iniciativa) y usa siempre las palabras formales: **Señor/Señora, Mr./Mrs.**</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 52: Norms: Collab Areas -->
+<div class="slide-container" id="slide52">
+    <h2 class="slide-title">Áreas de Colaboradores</h2>
+    <div class="content-area">
+        <div class="bullet-list">
+            <ul>
+                <li><i class="fa-solid fa-couch"></i> <strong>Área de Descanso (La Choza):</strong> Nuestra área de descanso con muebles cómodos, TV y WIFI.</li>
+                <li><i class="fa-solid fa-utensils"></i> <strong>Comedor de Colaboradores:</strong> El único en el complejo dentro del hotel. Sirve desayuno, almuerzo y cena.</li>
+                <li><i class="fa-solid fa-thumbtack"></i> <strong>Murales Informativos:</strong> Mantente informado sobre resultados (GRI), empleado del mes y actividades.</li>
+                <li><i class="fa-solid fa-broom"></i> <strong>Reglas Clave:</strong> Mantener todas las áreas comunes (comedor, baños, pasillos) limpias y ordenadas.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 53: Section_Title - Metrics & Leadership -->
+<div class="slide-container" id="slide53">
+    <div class="section-title-layout">
+        <hr>
+        <h2>Métricas y Liderazgo</h2>
+        <p>Cómo Medimos el Éxito y Quiénes Guían al Equipo</p>
+    </div>
+</div>
+
+<!-- Slide 54: Metrics (Reviewpro) (Adaptado a Texto Completo) -->
+<div class="slide-container" id="slide54">
+    <h2 class="slide-title">¿Cómo medimos el éxito?</h2>
+    <div class="content-area">
+        <!-- Layout modificado a una sola columna -->
+        <div class="bullet-list" style="max-width: 800px; align-self: center;">
+            <p>Nuestra calidad se mide por la voz del cliente. Usamos la plataforma <strong>Reviewpro</strong> para analizarla.</p>
+            <ul style="margin-left: 0px;">
+                <li><i class="fa-solid fa-star-half-stroke"></i> <strong>GRI (Global Review Index):</strong> Es nuestra puntuación de reputación online.</li>
+                <li><i class="fa-solid fa-clipboard-check"></i> <strong>ISC (Índice de Satisfacción):</strong> Mide el nivel de satisfacción general.</li>
+                <li><i class="fa-solid fa-arrow-up-right-dots"></i> <strong>NPS (Net Promoter Score):</strong> Mide la lealtad. ¿Qué tan probable es que nos recomienden? (Promotores vs. Detractores).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 55: Leadership Team (Joia) (LAYOUT CORREGIDO) -->
+<div class="slide-container" id="slide55">
+      <h2 class="slide-title">Tu Equipo de Liderazgo (Joia Bávaro)</h2>
+    <div class="content-area">
+        <!-- CORRECCIÓN DE LAYOUT: Se utiliza la clase .leadership-list (CSS personalizado) para evitar el solapamiento de .bullet-list -->
+        <div class="leadership-list">
+            <div style="padding-left: 10px;">
+                <i class="fa-solid fa-star"></i><strong>Directora:</strong> Sonja Nalkiran
+            </div>
+            <div style="padding-left: 50px;">
+                <i class="fa-solid fa-user-tie"></i><strong>Subdirector:</strong> Jessica Ponce
+            </div>
+            <div style="padding-left: 50px;">
+                <i class="fa-solid fa-user-tie"></i><strong>Subdirector Jr.:</strong> Jorge Rodríguez
+            </div>
+            <div style="padding-left: 90px;">
+                <i class="fa-solid fa-user-check"></i><strong>Jefa de Relaciones Públicas:</strong> Joairy Hernández
+            </div>
+            <div style="padding-left: 130px;">
+                <i class="fa-solid fa-user-tag"></i><strong>Jefa Star Prestige:</strong> Isamar Pulinario
+            </div>
+            <div style="padding-left: 130px;">
+                <i class="fa-solid fa-user-tag"></i><strong>Jefe de Mayordomos:</strong> Darlyn Díaz
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 56: Q&A / Final -->
+<div class="slide-container" id="slide56">
+    <div class="qa-layout">
+        <h2>¿Listo/a para tu evaluación?</h2>
+        <p>Esperamos que este manual te sea de utilidad. Recuerda que nuestra imagen es un reflejo de lo que somos.<br>¡Bienvenido/a!</p>
+    </div>
+</div>
+
+</body>
+</html>
